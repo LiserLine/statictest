@@ -1,0 +1,66 @@
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Painel de Informações</h1>
+  </div>
+
+  <div id="content-info" class="align-items-center justify-content-between
+    mb-4">
+    <h5 class="mb-0 text-warning">Selecione um paciente para visualizar seus
+      dados!</h3>
+  </div>
+
+  <div id="dashboard-main-container" style="display: none;">
+
+    <div class="row">
+
+      <div class="col-lg-6">
+        <div class="card shadow mb-4 border-left-info">
+          <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Dados Gerais</h6>
+          </div>
+          <div class="card-body">
+            <table style="height: 100px;">
+              <tbody>
+                <tr>
+                  <td class="align-baseline"><strong>Nome:</strong></td>
+                  <td id="table-dadosGerais-nome" class="align-baseline"></td>
+                </tr>
+                <tr>
+                  <td class="align-baseline"><strong>Sexo:</strong></td>
+                  <td id="table-dadosGerais-sexo" class="align-baseline"></td>
+                </tr>
+                <tr>
+                  <td class="align-baseline"><strong>Condição:</strong></td>
+                  <td id="table-dadosGerais-condicao" class="align-baseline"></td>
+                </tr>
+                <tr>
+                  <td class="align-baseline"><strong>Data de Nascimento:</strong></td>
+                  <td id="table-dadosGerais-dtNascimento" class="align-baseline"></td>
+                </tr>
+                <tr>
+                  <td class="align-baseline"><strong>Peso:</strong></td>
+                  <td id="table-dadosGerais-peso" class="align-baseline"></td>
+                </tr>
+                <tr>
+                  <td class="align-baseline"><strong>Altura:</strong></td>
+                  <td id="table-dadosGerais-altura" class="align-baseline"></td>
+                </tr>
+                <tr>
+                  <td class="align-baseline"><strong>Observações:</strong></td>
+                  <td id="table-dadosGerais-observacoes" class="align-baseline"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<script type="module" src="./../js/pages/dashboard.js"></script>

@@ -1,0 +1,75 @@
+<div class="container-fluid">
+
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Lista de Pacientes</h1>
+  </div>
+
+  <!-- DataTales Example -->
+  <div class="card shadow mb-4">
+    <div class="card-header py-3">
+      <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%"
+          cellspacing="0">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Condição</th>
+              <th>Idade</th>
+              <th>Sexo</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+<script src="./../vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="./../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#dataTable').DataTable({
+      language: {
+        url:'https:////cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json'
+      },
+      ajax:{
+        url: window.API_ENDPOINT + "pacients",
+        type: "GET",
+        beforeSend: function (r) {
+          r.setRequestHeader("GameToken", JSON.parse(sessionStorage.getItem('userCredentials')).gameToken);
+        },
+        error: function(j, t, e){
+          return [];
+        },
+        dataSrc: function(d){
+          let conditions = {
+            'Obstructive' : 'Obstrutivo'
+          }
+          
+          for(var i=0;i<d.data.length;i++){
+            d.data[i].condition = conditions[d.data[i].condition];
+          }
+          return d.data;
+        }
+      },
+      columns: [
+              { data: "name" },
+              { data: "sex" },
+              { data: "condition" },
+              { data: "observations" }
+      ],
+      buttons: [
+        'copy'
+      ]
+    });
+  });
+</script>

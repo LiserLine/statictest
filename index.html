@@ -1,16 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
   <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,
       shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <base href="">
 
-    <title>I Blue It - Login</title>
+    <title>I Blue It - Menu</title>
+
+    <!-- DataTable CSS -->
+    <link rel="stylesheet" type="text/css"
+      href="./vendor/datatables/dataTables.bootstrap4.min.css">
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
@@ -18,6 +22,11 @@
     <link
       href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
       rel="stylesheet">
+
+    <!-- DatePicker TempusDominus-Bootstrap4 -->
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css"
+      />
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.css" rel="stylesheet">
@@ -27,63 +36,59 @@
 
   </head>
 
-  <body class="bg-gradient-primary">
+  <body id="page-top">
 
-    <div class="container">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
 
-      <!-- Outer Row -->
-      <div class="row justify-content-center">
+      <!-- Sidebar -->
+      <div id="sidebar"></div>
+      <!-- End of Sidebar -->
 
-        <div class="col-xl-10 col-lg-12 col-md-9">
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
 
-          <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-              <!-- Nested Row within Card Body -->
-              <div class="row">
-                <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                <div class="col-lg-6">
-                  <div class="p-5">
-                    <div class="text-center">
-                      <h1 class="h4 text-gray-900 mb-4">Bem-vindo!</h1>
-                    </div>
-                    <div id="errorForm" class="alert alert-danger" role="alert"
-                      style="visibility:hidden">
-                    </div>
-                    <form class="user" name="loginForm" method="POST">
-                      <div class="form-group">
-                        <input type="text" class="form-control
-                          form-control-user" required id="inputUsername"
-                          aria-describedby="usernameHelp"
-                          placeholder="Usuário">
-                      </div>
-                      <div class="form-group">
-                        <input type="password" class="form-control
-                          form-control-user" required id="inputPassword"
-                          placeholder="Senha">
-                      </div>
-                      <button type="submit" class="btn btn-primary btn-user
-                        btn-block">Entrar</button>
-                    </form>
-                    <hr>
-                    <div class="text-center">
-                      <a class="small" href="register.html">Criar Conta
-                        de Consulta</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Main Content -->
+        <div id="content">
+
+          <!-- Topbar -->
+          <div id="header"></div>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <section id="main-content"></section>
+          <!-- End Page Content -->
 
         </div>
 
+        <!-- End of Main Content -->
+        <!-- Footer -->
+        <div id="footer"></div>
+        <!-- End of Footer -->
+
       </div>
+      <!-- End of Content Wrapper -->
 
     </div>
+    <!-- End of Page Wrapper -->
 
-    <!-- Footer -->
-    <div id="footer"></div>
-    <!-- End of Footer -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div id="modalUser"></div>
+
+    <!-- Highcharts -->
+    <script src="vendor/highcharts/highcharts.js"></script>
+    <script src="vendor/highcharts/highcharts-more.js"></script>
+    <script src="vendor/highcharts/modules/dumbbell.js"></script>
+    <script src="vendor/highcharts/modules/lollipop.js"></script>
+    <script src="vendor/highcharts/modules/exporting.js"></script>
+    <script src="vendor/highcharts/modules/export-data.js"></script>
+    <script src="vendor/highcharts/modules/accessibility.js"></script>
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -92,43 +97,35 @@
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
+    <!-- Datepicker -->
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+      <script type="text/javascript"
+      src="./vendor/datepicker/locales.js"></script>
+    <script type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/js/tempusdominus-bootstrap-4.min.js"></script>
+    
+      <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Routing script -->
+    <script src="https://unpkg.com/page/page.js"></script>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
+    <!-- App script -->
+    <script type="module" src="js/app.js"></script>
+
+    <!-- App router -->
+    <script type="module" src="js/router.js"></script>
 
     <!-- Block UI-->
     <script src="vendor/block-ui/jquery.blockUI.min.js"></script>
 
   </body>
 
-  <script>
-  $('form[name="loginForm"]').on('submit', function(e) {
-    e.preventDefault();
-    $('.container').block({message:`Carregando...`});
-
-    $.ajax({
-      url: "https://blueapi.azurewebsites.net/api/" +  "login",
-      data: JSON.stringify({
-        username: $("#inputUsername").val(),
-        password: $("#inputPassword").val()
-      }),
-      type: "POST",
-      dataType: "json",
-      success: function (d) {
-          $("#errorForm").append(d.message);
-          sessionStorage.setItem('userCredentials', JSON.stringify(d.data));
-          $('.container').unblock();
-          window.location.pathname = '/';
-      },
-      error: function(e){
-        var alertDiv = document.getElementById("errorForm");
-        alertDiv.innerHTML = "";
-        var content = document.createTextNode(e.responseJSON.message);
-        alertDiv.appendChild(content);
-        document.getElementById("errorForm").style.visibility= "visible";
-        $('.container').unblock();
-      }
-      
-    });
-  });
-</script>
 </html>
